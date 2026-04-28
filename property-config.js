@@ -65,8 +65,8 @@ const propertyConfig = {
 
   // 6. Mapa (Google Maps Embed)
   mapa: {
-    urlEmbed: "https://maps.google.com/maps?q=Santa+Barbara+Oriental%2C+Bogota&t=&z=15&ie=UTF8&iwloc=&output=embed", 
-    titulo: "Ubicación Santa Bárbara Oriental"
+    urlEmbed: "https://maps.google.com/maps?q=Santa+Barbara%2C+Bogota&t=&z=15&ie=UTF8&iwloc=&output=embed", 
+    titulo: "Ubicación Santa Bárbara"
   },
 
   // 7. Descripción Final / Análisis de Inversión
