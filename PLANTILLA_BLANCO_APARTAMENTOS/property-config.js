@@ -9,23 +9,23 @@
 const propertyConfig = {
   // 1. SEO (Para Google y compartir en redes)
   seo: {
-    title: "Apartamento en Venta para Estrenar en Santa Bárbara, Bogotá",
-    description: "Impresionante apartamento de 116m², 3 habitaciones, 3 baños, cocina abierta, balcón y la mejor vista a los cerros orientales en Santa Bárbara. ¡Una oportunidad única!",
+    title: "[TÍTULO SEO]",
+    description: "[DESCRIPCIÓN CORTA]",
     keywords: "VentaApartamentosBogota, ApartamentoEnSantaBarbara, InmobiliariaBogota, BienesRaicesColombia, Usaquen, InversionInmobiliaria, VecyBienesRaices, CerrosOrientales, ViviendaPremiumBogota",
-    propertyId: "ID-BOG-SB01",
-    ogUrl: "https://ap-sta-barbara-or-bog.netlify.app/",
-    ogImage: "assets/apartamento-estrenar-norte-bogota-usaquen.jpg",
+    propertyId: "[ID-INMUEBLE]",
+    ogUrl: "https://tudominio.netlify.app/",
+    ogImage: "assets/portada.jpg",
     author: "Vecy Bienes Raíces",
     copyright: "2026"
   },
   
   // 2. Encabezado Principal
   infoPrincipal: {
-    headerBadge: "🚀 ¡Para Estrenar en Santa Bárbara! 🏢",
-    tituloHtml: "Impresionante Apartamento con Vista a Cerros Orientales",
-    precioVenta: "$1.170.000.000",
-    valorAdmin: "Consultar",
-    labelExtra: "✨ Ubicación Premium"
+    headerBadge: "🚀 [ETIQUETA LLAMATIVA] 🏢",
+    tituloHtml: "[TÍTULO PRINCIPAL DEL INMUEBLE]",
+    precioVenta: "$[PRECIO]",
+    valorAdmin: "$[ADMINISTRACIÓN]",
+    labelExtra: "✨ [ETIQUETA EXTRA]"
   },
 
   // 3. Rejilla de Detalles (Iconos y Datos Clave)

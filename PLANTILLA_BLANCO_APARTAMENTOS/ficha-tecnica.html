@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brochure Técnico - Apartamento Santa Bárbara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #d4af37; --coffee: #3e2723; --cream: #fdfbf0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; background: radial-gradient(ellipse at center, #c19a6b 0%, #3e2723 100%); background-attachment: fixed; min-height: 100vh; padding: 20px; color: #1a1a1a; display: flex; flex-direction: column; align-items: center; }
+        
+        .nav-ui { width: 100%; max-width: 210mm; display: flex; justify-content: space-between; gap: 15px; margin-bottom: 20px; }
+        
+        .btn-gold, .btn-black {
+            padding: 12px 25px; font-size: 14px; font-weight: 900;
+            border-radius: 50px; cursor: pointer; text-align: center;
+            text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
+            transition: all 0.2s; border: none;
+            display: flex; align-items: center; justify-content: center; white-space: nowrap;
+        }
+
+        .btn-gold { background: linear-gradient(180deg, #FFD700 0%, #FDB931 50%, #DAA520 100%); color: #3E2723; box-shadow: 0 4px 0 #B8860B, 0 8px 15px rgba(0, 0, 0, 0.3); }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #B8860B, 0 12px 20px rgba(0, 0, 0, 0.4); }
+
+        .btn-black { background: linear-gradient(180deg, #333333 0%, #1a1a1a 100%); color: #ffffff; box-shadow: 0 4px 0 #000000, 0 8px 15px rgba(0, 0, 0, 0.3); }
+        .btn-black:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #000000, 0 12px 20px rgba(0, 0, 0, 0.4); }
+
+        #export-container { width: 210mm; background: transparent; }
+
+        .page {
+            width: 210mm; height: 295mm; padding: 20mm; display: flex; flex-direction: column; justify-content: space-between;
+            page-break-after: always; overflow: hidden; position: relative; background: white; box-shadow: 0 15px 35px rgba(0,0,0,0.2); margin-bottom: 30px; border-radius: 5px;
+        }
+
+        /* ----- SOLUCIÓN PERFECTA A4 ----- */
+        .pdf-export-mode, .pdf-export-mode body { padding: 0 !important; margin: 0 !important; background: white !important; display: block !important; }
+        .pdf-export-mode #export-container { width: 210mm !important; margin: 0 !important; }
+        .pdf-export-mode .page { 
+            width: 210mm !important; 
+            height: 295mm !important; 
+            margin: 0 !important; 
+            border-radius: 0 !important; 
+            box-shadow: none !important; 
+            page-break-after: always !important; 
+            box-sizing: border-box !important;
+        }
+
+        .content-center { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+
+        .header-ref { font-size: 10px; font-weight: 800; color: #ccc; text-align: center; letter-spacing: 4px; }
+        .footer-note { font-size: 9px; text-align: center; color: #ccc; letter-spacing: 2px; }
+
+        h1 { font-size: 40px; font-weight: 800; text-align: center; color: var(--coffee); margin-bottom: 20px; letter-spacing: -1px; }
+        h2 { font-size: 18px; font-weight: 800; border-bottom: 3px solid var(--gold); padding-bottom: 8px; margin-bottom: 25px; color: var(--coffee); text-transform: uppercase; }
+        
+        .hero-img { width: 100%; height: 600px; background-size: cover; background-position: center; border: 2px solid var(--gold); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .data-card { background: #fafafa; padding: 25px; border-radius: 12px; border: 1px solid #f0f0f0; }
+        .spec-list { list-style: none; }
+        .spec-list li { margin-bottom: 12px; font-size: 14px; border-bottom: 1px solid #eee; padding-bottom: 8px; display: flex; justify-content: space-between; }
+        
+        .gallery-grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 15px; height: 650px; } 
+        .gallery-img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; border: 1px solid #eee; }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .nav-ui { display: none !important; }
+            #export-container { margin: 0; width: 100%; }
+            .page { margin-bottom: 0; border-radius: 0; box-shadow: none; height: 100vh !important; }
+        }
+
+        @media screen and (max-width: 600px) {
+            body { padding: 10px; }
+            .nav-ui { max-width: 100%; flex-direction: column; }
+            .btn-black, .btn-gold { width: 100%; }
+            #export-container { width: 100%; }
+            .page { width: 100%; height: auto; min-height: 0; padding: 20px; page-break-after: auto; }
+            .hero-img { height: 350px; }
+            .grid-2 { grid-template-columns: 1fr; gap: 20px; }
+            .gallery-grid-2x2 { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; gap: 15px; }
+            .gallery-img { height: 280px; }
+            h1 { font-size: 32px; }
+            .header-ref, .footer-note { margin: 15px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-ui">
+        <a href="index.html" class="btn-black">← VOLVER AL INMUEBLE</a>
+        <button onclick="downloadPDF()" class="btn-gold">DESCARGAR EN PDF</button>
+    </div>
+
+    <div id="export-container">
+        
+        <!-- P1: PORTADA -->
+        <div class="page">
+            <div class="header-ref">REF: <span class="prop-id"></span></div>
+            <div class="content-center">
+                <h1>BROCHURE TÉCNICO</h1>
+                <div class="hero-img" id="cover-img" style="background-image: url('assets/3.jpeg');"></div>
+                <div style="margin-top: 30px; text-align: center; font-size: 18px; color: #666; font-weight: 300; letter-spacing: 5px;" id="cover-subtitle">APARTAMENTO RESIDENCIAL - SANTA BÁRBARA</div>
+            </div>
+            <div class="footer-note">DOCUMENTO COMERCIAL - EXCLUSIVO</div>
+        </div>
+
+        <!-- P2: SPECS -->
+        <div class="page">
+            <div class="header-ref">CARACTERÍSTICAS Y DETALLES / 02</div>
+            <div class="content-center">
+                <h2>1. Descripción del Inmueble</h2>
+                <div class="grid-2">
+                    <div class="data-card" id="desc-text" style="font-size: 14px; line-height: 1.7; text-align: justify;">
+                        <!-- Inyectado -->
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 20px; font-weight: 700; color: var(--gold);">Especificaciones Clave</h3>
+                        <ul class="spec-list" id="specs-list">
+                            <!-- Inyectado -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-note">PÁGINA 02 | <span class="prop-id"></span></div>
+        </div>
+
+        <!-- P3: UBICACION Y BENEFICIOS -->
+        <div class="page">
+            <div class="header-ref">UBICACIÓN Y BENEFICIOS / 03</div>
+            <div class="content-center">
+                <div class="grid-2">
+                    <div>
+                        <h2>2. Entorno y Sitios de Interés</h2>
+                        <ul class="spec-list" id="layout-list" style="font-size: 12px;">
+                            <!-- Inyectado (caracteristicasExternas) -->
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>3. Beneficios Destacados</h2>
+                        <div class="data-card" style="border-left: 6px solid var(--gold);">
+                            <p style="font-size: 14px;" id="ubicacion-text"></p>
+                        </div>
+                        <h2 style="margin-top: 40px;">4. Ventajas e Infraestructura</h2>
+                        <p style="font-size: 14px; color: #444;">Edificio moderno y vanguardista. Construcción con excelentes estándares de calidad, seguridad 24/7 permanente y amenidades exclusivas de última generación.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-note">PÁGINA 03 | <span class="prop-id"></span></div>
+        </div>
+
+        <!-- P4: GALLERY 1 -->
+        <div class="page">
+            <div class="header-ref">GALERÍA VISUAL / 04</div>
+            <div class="content-center">
+                <div id="gallery-box-1" class="gallery-grid-2x2"></div>
+            </div>
+            <div class="footer-note">PÁGINA 04 | <span class="prop-id"></span></div>
+        </div>
+
+        <!-- P5: GALLERY 2 -->
+        <div class="page" id="page-5" style="display: none;">
+            <div class="header-ref">GALERÍA VISUAL / 05</div>
+            <div class="content-center">
+                <div id="gallery-box-2" class="gallery-grid-2x2"></div>
+            </div>
+            <div class="footer-note">PÁGINA 05 | <span class="prop-id"></span></div>
+        </div>
+
+    </div>
+
+    <script src="property-config.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.prop-id').forEach(el => el.innerText = propertyConfig.seo.propertyId);
+        document.getElementById('desc-text').innerHTML = propertyConfig.destacadoInterno;
+        document.getElementById('ubicacion-text').innerHTML = propertyConfig.destacadoUbicacion;
+        document.getElementById('cover-img').style.backgroundImage = `url('${propertyConfig.seo.ogImage || propertyConfig.multimedia.videoThumbnail}')`;
+
+        const sList = document.getElementById('specs-list');
+        propertyConfig.detalles.forEach(d => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span>${d.icon} ${d.label}</span> <strong>${d.value}</strong>`;
+            sList.appendChild(li);
+        });
+
+        const lList = document.getElementById('layout-list');
+        propertyConfig.caracteristicasExternas.forEach(a => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span>${a.emoji} ${a.name}</span>`;
+            lList.appendChild(li);
+        });
+
+        const gBox1 = document.getElementById('gallery-box-1');
+        const gBox2 = document.getElementById('gallery-box-2');
+        const p5 = document.getElementById('page-5');
+        
+        let allImages = [];
+        if (propertyConfig.multimedia.imagesList && propertyConfig.multimedia.imagesList.length > 0) {
+            allImages = propertyConfig.multimedia.imagesList;
+        }
+        
+        const galleryImages = allImages.slice(0, 8);
+        
+        galleryImages.slice(0, 4).forEach(src => {
+            const img = document.createElement('img');
+            img.src = src; img.className = 'gallery-img'; gBox1.appendChild(img);
+        });
+
+        if (galleryImages.length > 4) {
+            p5.style.display = 'flex';
+            galleryImages.slice(4, 8).forEach(src => {
+                const img = document.createElement('img');
+                img.src = src; img.className = 'gallery-img'; gBox2.appendChild(img);
+            });
+        }
+
+        function downloadPDF() {
+            const element = document.getElementById('export-container');
+            const btn = document.querySelector('.btn-gold');
+            btn.innerText = 'GENERANDO PDF...';
+            
+            // Ocultar la barra superior para capturar únicamente el documento
+            document.querySelector('.nav-ui').style.display = 'none';
+            document.body.classList.add('pdf-export-mode');
+
+            setTimeout(() => {
+                const opt = {
+                    margin: 0, 
+                    filename: `Brochure-${propertyConfig.seo.propertyId}.pdf`,
+                    image: { type: 'jpeg', quality: 1.0 },
+                    html2canvas: { 
+                        scale: 2, 
+                        useCORS: true, 
+                        letterRendering: true,
+                        scrollY: 0,
+                        scrollX: 0
+                    },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                    pagebreak: { mode: ['css', 'legacy'] }
+                };
+                
+                html2pdf().set(opt).from(element).save().then(() => { 
+                    btn.innerText = 'DESCARGAR EN PDF'; 
+                    document.querySelector('.nav-ui').style.display = 'flex';
+                    document.body.classList.remove('pdf-export-mode');
+                }).catch(err => {
+                    console.error("Error al generar PDF:", err);
+                    btn.innerText = 'ERROR, REINTENTAR';
+                    document.querySelector('.nav-ui').style.display = 'flex';
+                    document.body.classList.remove('pdf-export-mode');
+                });
+            }, 300);
+        }
+    </script>
+</body>
+</html>
