@@ -13,7 +13,7 @@ const propertyConfig = {
     description: "Impresionante apartamento de 116m², 3 habitaciones, 3 baños, cocina abierta, balcón y la mejor vista a los cerros orientales en Santa Bárbara. ¡Una oportunidad única!",
     keywords: "VentaApartamentosBogota, ApartamentoEnSantaBarbara, InmobiliariaBogota, BienesRaicesColombia, Usaquen, InversionInmobiliaria, VecyBienesRaices, CerrosOrientales, ViviendaPremiumBogota",
     propertyId: "ID-BOG-SB01",
-    ogUrl: "https://ap-sta-barbara-oriental-bog.netlify.app/",
+    ogUrl: "https://ap-sta-barbara-or-bog.netlify.app/",
     ogImage: "assets/portada_ap_sta_barbara_oriental.png",
     author: "Vecy Bienes Raíces",
     copyright: "2026"
@@ -124,7 +124,7 @@ const propertyConfig = {
 📍 *Ubicación:* Santa Bárbara Oriental, Bogotá
 
 🔗 *Ver Fotos y Detalles:*
-https://ap-sta-barbara-oriental-bog.netlify.app/
+https://ap-sta-barbara-or-bog.netlify.app/
 
 #InmobiliariaBogota #BienesRaicesBogota #SantaBarbara #ApartamentoEnVenta #VecyBienesRaices #Usaquen #CerrosOrientales`
   }
