@@ -65,7 +65,7 @@ const propertyConfig = {
 
   // 6. Mapa (Google Maps Embed)
   mapa: {
-    urlEmbed: "https://maps.google.com/maps?ll=4.701744,-74.031611&t=&z=16&ie=UTF8&iwloc=&output=embed", 
+    urlEmbed: "https://www.google.com/maps/d/embed?mid=1A3pBZ2le8R3a5vlAlXFxf_kiCwzF9Nc&ehbc=2E312F", 
     titulo: "Ubicación Santa Bárbara Oriental"
   },
 
